@@ -29,7 +29,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
 			{ y: 279,  label: "Orel" },
 			{ y: 248,  label: "Omer" },
 			{ y: 231, label: "Maya" },
-			{ y: 230,  label: "Lior" },
+			{ y: 230,  label: "Aviv" },
 			{ y: 226,  label: "Hadar" }
 		]
 	}]
