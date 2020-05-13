@@ -98,3 +98,11 @@
   searchFilter.init();
   
 })();
+
+ function pictureChange()
+  {
+   document.getElementById("theImage").src="assets/images/selfie.png";
+    
+   document.getElementById("ImageThePoop").src="assets/images/Star.png";
+  
+  }
