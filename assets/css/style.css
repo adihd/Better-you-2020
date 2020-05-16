@@ -169,7 +169,9 @@ strong {
 .m-t-20 {
   margin-top: 20px;
 }
-
+.tempdiv {
+  background-color: white;
+}
 .m-b-20 {
   margin-bottom: 20px;
 }
