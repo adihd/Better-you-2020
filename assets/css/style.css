@@ -87,6 +87,14 @@ body {
 h1 {
   line-height: 43px;
   font-size: 36px;
+                                font-style: normal;
+                                font-weight: 500;
+                                
+                                /* or 122% */
+                                
+                              
+                                letter-spacing: 0.18px;
+
 }
 
 h2 {
