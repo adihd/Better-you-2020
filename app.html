@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Minesweeper</title>
+  <!-- vue js cdn link :) development version, includes helpful console warnings -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="./style.css">
+  <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script> -->
+
+</head>
+
+<body>
+  <!-- partial:index.partial.html -->
+
+  <div class="board"></div>
+  <div id="app">
+    <!-- <p>click the btn if you did todays habit</p> -->
+    <!-- <input type="button" value="clickme" @click="btnclick"> -->
+    <h1> daily point = {{points}}</h1>
+    <!-- <h1>{{today}}</h1> -->
+    <p>Every day you do your habit you will get 1 point!</p>
+    <p>If you and your buddie both do the habit today you will get 3 points!!</p>
+    <p>You can uncover a part of the picture when you have points</p>
+    <!-- <input id="adi" type="button" value="clickme" @click="btnclick"> -->
+  </div>
+
+
+  <!-- <div class="endscreen"></div> -->
+
+  <!-- need to style the settings first -->
+
+  <!-- <div class="settings">
+	<label for="boardSize">board size</label>
+	<input id="boardSize" type="range" min="0" max="20">
+	
+	<label for="tileSize">tile size</label>
+	<input id="tileSize" type="range" min="10" max="100" step="10">
+	
+	<fieldset>
+    <input type="radio" id="easy" name="difficulty" value="0.1" class="difficulty">
+    <label for="easy">Easy</label> 
+    <input type="radio" id="normal" name="difficulty" value="0.2" class="difficulty" checked>
+    <label for="normal">Normal</label>
+		<input type="radio" id="hard" name="difficulty" value="0.4" class="difficulty">
+    <label for="hard">Hard</label> 
+  </fieldset>
+</div> -->
+  <!-- partial -->
+  <script src="app.js"></script>
+
+</body>
+
+</html>
