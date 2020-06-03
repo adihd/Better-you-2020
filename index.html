@@ -13,8 +13,12 @@
     <!-- Material design icons CSS -->
     <link rel="stylesheet" href="vendor/materializeicon/material-icons.css">
 
-    <!-- Sweet Alert -->
-    <link href="assets/plugins/sweet-alert2/sweetalert2.min.css" rel="stylesheet" type="text/css">
+     <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- SweetAlert2 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js"></script>
+
 
     <!--Morris Chart CSS -->
     <link rel="stylesheet" href="assets/plugins/morris/morris.css">
@@ -161,11 +165,9 @@ margin-right: 20px;
                                 </div>
                                 <!-- popover button!!!!!!!!!! -->
                                 <h3>Orel</h3>
-                                <button class="btn btn-primary text-light " type="button">
+                                <button id="success" class="btn btn-primary text-light " type="button">
                                     click to poke
                                 </button>
-
-
                             </div>
                         </div>
                     </div>
@@ -181,34 +183,6 @@ margin-right: 20px;
                                     aria-controls="collapseExample">
                                     click if you did
                                 </button>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- my div -->
-                    <div class="col-6 col-md-3">
-                        <div class="card shadow border-0 mb-3">
-                            <div class="card-body">
-                                <div class="avatar avatar-60 no-shadow border-0">
-                                    <div class="overlay bg-template"></div>
-                                </div>
-                                <div class="text-center">
-
-                                    <h3>not done</h3>
-
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <!-- my partner div -->
-                    <div class="col-6 col-md-3">
-                        <div class="card shadow border-0 mb-3">
-                            <div class="card-body">
-                                <div class="avatar avatar-60 no-shadow border-0">
-                                    <div class="overlay bg-template"></div>
-
-                                </div>
-                                <h3>not done</h3>
                                 <!-- toggle data!!!!!!!!!!!!!!!!!! -->
 
                                 <div class="collapse" id="collapseExample">
@@ -236,6 +210,41 @@ margin-right: 20px;
                                 <!-- toggle data!!!!!!!!!!!!!!!!!! -->
                             </div>
                         </div>
+                    </div>
+                    <!-- my div -->
+                    <div class="col-6 col-md-3">
+                        <div class="card shadow border-0 mb-3">
+                            <div class="card-body">
+                                <div class="avatar avatar-60 no-shadow border-0">
+                                    <div class="overlay bg-template"></div>
+                                </div>
+                                <div class="text-center">
+
+                                    <!-- not done -->
+                                    <img id="theImage" src="assets/images/waiting.png" alt="" class="thumb-md rounded-circle mr-1">
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- my partner div -->
+                    <div class="col-6 col-md-3">
+                                              <div class="card shadow border-0 mb-3">
+                            <div class="card-body">
+                                <div class="avatar avatar-60 no-shadow border-0">
+                                    <div class="overlay bg-template"></div>
+                                </div>
+                                <div class="text-center">
+
+                                    <!-- not done -->
+                                    <img id="theImage" src="assets/images/waiting.png" alt="" class="thumb-md rounded-circle mr-1">
+
+                                </div>
+
+                            </div>
+                        </div>
+
                     </div>
                 </div>
                 <!--  2 card -->
@@ -273,6 +282,16 @@ margin-right: 20px;
             // Enables popover
             $("[data-toggle=popover]").popover();
         });
+
+// Alert Modal Type
+		$(document).on('click', '#success', function(e) {
+			swal(
+				'Success',
+				'You just <b style="color:green;">Poked</b> your partner!!!',
+				'success'
+        // now make the button in another color!
+			)
+		});
     </script>
 </body>
 
