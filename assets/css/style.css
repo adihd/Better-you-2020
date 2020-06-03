@@ -302,7 +302,7 @@ strong {
 .icon-bar a {
   float: left;
   /* how many items in bars */
-  width: 25%;
+  width: 20%;
   text-align: center;
   padding: 12px 0;
   transition: all 0.3s ease;
