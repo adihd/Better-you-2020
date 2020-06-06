@@ -34,37 +34,37 @@ var x = setInterval(function() {
   }
 }, 1000);
 
-window.onload = function () {
+// window.onload = function () {
 
-var chart = new CanvasJS.Chart("chartContainer", {
-	animationEnabled: true,
-	theme: "light2", // "light1", "light2", "dark1", "dark2"
-	title:{
-		text: "Top Rated"
-	},
-	axisY: {
-		title: "Points"
-	},
-	data: [{
-		type: "column",
-		showInLegend: true,
-		legendMarkerColor: "grey",
-		legendText: "Friends",
-		dataPoints: [
-			{ y: 420, label: "Nitai" },
-			{ y: 389,  label: "Adi" },
-			{ y: 302,  label: "Tom" },
-			{ y: 279,  label: "Orel" },
-			{ y: 248,  label: "Omer" },
-			{ y: 231, label: "Maya" },
-			{ y: 230,  label: "Aviv" },
-			{ y: 226,  label: "Hadar" }
-		]
-	}]
-});
-chart.render();
+// var chart = new CanvasJS.Chart("chartContainer", {
+// 	animationEnabled: true,
+// 	theme: "light2", // "light1", "light2", "dark1", "dark2"
+// 	title:{
+// 		text: "Top Rated"
+// 	},
+// 	axisY: {
+// 		title: "Points"
+// 	},
+// 	data: [{
+// 		type: "column",
+// 		showInLegend: true,
+// 		legendMarkerColor: "grey",
+// 		legendText: "Friends",
+// 		dataPoints: [
+// 			{ y: 420, label: "Nitai" },
+// 			{ y: 389,  label: "Adi" },
+// 			{ y: 302,  label: "Tom" },
+// 			{ y: 279,  label: "Orel" },
+// 			{ y: 248,  label: "Omer" },
+// 			{ y: 231, label: "Maya" },
+// 			{ y: 230,  label: "Aviv" },
+// 			{ y: 226,  label: "Hadar" }
+// 		]
+// 	}]
+// });
+// chart.render();
 
-}
+// }
 
 (function ($) {
 
