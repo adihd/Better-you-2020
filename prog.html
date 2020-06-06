@@ -21,6 +21,10 @@
     <link href="assets/css/style.css" rel="stylesheet" type="text/css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+
 </head>
 
 <body data-keep-enlarged="true">
@@ -140,9 +144,9 @@ margin-right: 20px;
 
     <!-- Adi.Start icon Bar footer -->
     <div class="icon-bar">
-        <a class="active" href="index.html"><i class="fa fa-home"></i></a>
+        <a href="index.html"><i class="fa fa-home"></i></a>
         <a href="prize.html"><i class="fa fa-trophy"></i></a>
-        <a href="prog.html"><i class="fa fa-calendar"></i></a>
+        <a class="active" href="prog.html"><i class="fa fa-calendar"></i></a>
         <a href="game.html"><i class="fa fa-gamepad"></i></a>
         <a href="Orel.html"><i class="fa fa-birthday-cake"></i></a>
         <!-- <a href="#"><i class="fa fa-trash"></i></a>  -->
@@ -156,80 +160,48 @@ margin-right: 20px;
         <div class="page-content">
 
             <div class="container-fluid">
-                <div class="row">
-
-                    <!-- Page-Title -->
-
-                    <div class="col-sm-12">
-
-                        <br> <br>
-                        <div class="card">
-                            <div class="card-body">
-
-                                <div class="text-center">
-                                    <img src="assets/images/pizza.jpeg" alt="" class="thumb-xl rounded-circle mr-1">
-                                    <br>
-                                    <br>
-                                    <h4 class="card-title mt-0 text-success">The big prize - Pizza Night :)</h4>
-
-
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="mb-0">
-                                            <img src="assets/images/Star.png" alt="" class="thumb-sm mr-1">
-                                            <span><strong>Orel &amp; nitai</strong></span>
-                                        </div>
-                                        <small class="float-right text-muted ml-3 font-14">699</small>
-                                        <div class="progress mt-2 mb-4  bg-white" style="height:6px;">
-                                            <div class="progress-bar bg-pink" role="progressbar"
-                                                style="width: 78%; border-radius:5px;" aria-valuenow="78"
-                                                aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                        <div class="mb-0">
-                                            <img src="assets/images/Star.png" alt="" class="thumb-sm mr-1">
-                                            <span><strong>Adi &amp; Hadar</strong></span>
-                                        </div>
-                                        <small class="float-right text-muted ml-3 font-14">615</small>
-                                        <div class="progress mt-2 mb-4  bg-white" style="height:6px;">
-                                            <div class="progress-bar bg-pink" role="progressbar"
-                                                style="width: 60%; border-radius:5px;" aria-valuenow="60"
-                                                aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                        <div class="mb-0">
-                                            <img src="assets/images/Star.png" alt="" class="thumb-sm mr-1">
-                                            <span><strong>Tom &amp; Aviv</strong></span>
-                                        </div>
-                                        <small class="float-right text-muted ml-3 font-14">532</small>
-                                        <div class="progress mt-2 mb-4  bg-white" style="height:6px;">
-                                            <div class="progress-bar bg-pink" role="progressbar"
-                                                style="width: 45%; border-radius:5px;" aria-valuenow="45"
-                                                aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                        <div class="mb-0">
-                                            <img src="assets/images/poop.png" alt="" class="thumb-sm mr-1">
-                                            <span><strong>Omer &amp; Maya</strong></span>
-                                        </div>
-                                        <small class="float-right text-muted ml-3 font-14">479</small>
-                                        <div class="progress mt-2  bg-white" style="height:6px;">
-                                            <div class="progress-bar bg-pink" role="progressbar"
-                                                style="width: 30%; border-radius:5px;" aria-valuenow="30"
-                                                aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-
-                    </div><!-- container -->
-
-                    <footer class="footer text-center text-sm-left tempdiv">
-                        © 2020 Better You <span class="text-muted d-none d-sm-inline-block float-right">Crafted with <i
-                                class="mdi mdi-heart text-danger"></i> </span>
-                    </footer>
-                </div>
+            </div>
+              <!-- container & title -->
+  <div class="container my-4">
+    <h1 class="my-4 text-center">Ninja Chat</h1>
+    <!-- buttons for chatrooms -->
+    <div class="chat-rooms mb-3 text-center">
+      <div class="my-2">Choose a chatroom:</div>
+      <button class="btn" id="general">#general</button>
+      <button class="btn" id="gaming">#gaming</button>
+      <button class="btn" id="music">#music</button>
+      <button class="btn" id="ninjas">#ninjas</button>
+    </div>
+    <!-- chat list / window -->
+    <div class="chat-window">
+      <ul class="chat-list list-group"></ul>
+    </div>
+    <!-- new chat form -->
+    <form class="new-chat my-3">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text">Your message:</div>
+        </div>
+        <input type="text" id="message" class="form-control" required>
+        <div class="input-group-append">
+          <input type="submit" class="btn" value="send">
+        </div>
+      </div>
+    </form>
+    <!-- update name form -->
+    <form class="new-name my-3">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text">Update name:</div>
+        </div>
+        <input type="text" id="name" class="form-control" required>
+        <div class="input-group-append">
+          <input type="submit" class="btn" value="update">
+        </div>
+      </div>
+      <div class="update-mssg text-center my-2"></div>
+    </form>
+  </div>
                 <!-- end page content -->
             </div>
             <!-- end page-wrapper -->
@@ -252,6 +224,43 @@ margin-right: 20px;
             <script src="assets/pages/jquery.dashboard.init.js"></script>
             <!-- App js -->
             <script src="assets/js/app.js"></script>
+
+
+            <!-- firestore -->
+            <script src="http://cdn.date-fns.org/v1.9.0/date_fns.min.js"></script>
+
+
+<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-firestore.js"></script>
+
+
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBuxljj3k7r0t0z25hE6NI24phqi3SRQcQ",
+    authDomain: "betteryou-fa31f.firebaseapp.com",
+    databaseURL: "https://betteryou-fa31f.firebaseio.com",
+    projectId: "betteryou-fa31f",
+    storageBucket: "betteryou-fa31f.appspot.com",
+    messagingSenderId: "657483400525",
+    appId: "1:657483400525:web:4645fec7934e7e9b02a304",
+    measurementId: "G-4J1G4ZPLJ5"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  const db = firebase.firestore();
+  </script>
+  <script src="scripts/chat.js"></script>
+  <script src="scripts/ui.js"></script>
+  <script src="scripts/app.js"></script>
+
+            
 
 
 

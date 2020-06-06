@@ -31,6 +31,14 @@
     <link href="assets/css/style.css" rel="stylesheet" type="text/css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 
+    <!-- emojitwitwer -->
+    <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
+
+    <!-- tippy -->
+    <button data-tippy-content="Tooltip">Text</button>
+<button data-tippy-content="Another Tooltip">Text</button>
+
+
 </head>
 
 <body data-keep-enlarged="true">
@@ -139,7 +147,7 @@ margin-right: 20px;
 
     <!-- Adi.Start icon Bar footer -->
     <div class="icon-bar">
-        <a class="active" href="index.html"><i class="fa fa-home"></i></a>
+        <a class="active" href="forms.html"><i class="fa fa-home"></i></a>
         <a href="prize.html"><i class="fa fa-trophy"></i></a>
         <a href="prog.html"><i class="fa fa-calendar"></i></a>
         <a href="game.html"><i class="fa fa-gamepad"></i></a>
@@ -157,32 +165,45 @@ margin-right: 20px;
             <div class="container-fluid">
                 <!-- 4 card  -->
                 <div class="row text-center mt-4">
+                  <div class="col-12 col-md-6">
+                    <div class="card shadow border-0 mb-3" >
+
+                  <h1>Your team has 328 points</h1>
+                  </div>
+                  </div>
+                  </div>
+                <div class="row text-center mt-4">
                     <div class="col-6 col-md-3">
-                        <div class="card shadow border-0 mb-3">
+                      <h1>👧 Orel </h1>
+                        <div class="card shadow border-0 mb-3" style="background-color: #EC87C0;">
                             <div class="card-body">
                                 <div class="avatar avatar-60 no-shadow border-0">
                                     <div class="overlay bg-template"></div>
 
                                 </div>
                                 <!-- popover button!!!!!!!!!! -->
-                                <h3>Orel</h3>
+                                
                                 <button id="success" class="btn btn-primary text-light " type="button">
-                                    click to poke
+                                    click to remind Orel to do her habit
                                 </button>
+
+
+                                
                             </div>
                         </div>
                     </div>
                     <div class="col-6 col-md-3">
-                        <div class="card shadow border-0 mb-3">
+                      <h1>🦄 Me </h1>
+                        <div class="card shadow border-0 mb-3"style="background-color: #EC87C0;">
                             <div class="card-body">
                                 <div class="avatar avatar-60 no-shadow border-0">
                                     <div class="overlay bg-template"></div>
                                 </div>
-                                <h3>me</h3>
+                                
                                 <button class="btn btn-primary text-light collapsed" type="button"
                                     data-toggle="collapse" data-target="#collapseExample" aria-expanded="false"
                                     aria-controls="collapseExample">
-                                    click if you did
+                                    click if you did your habit
                                 </button>
                                 <!-- toggle data!!!!!!!!!!!!!!!!!! -->
 
@@ -213,42 +234,30 @@ margin-right: 20px;
                         </div>
                     </div>
                     <!-- my div -->
-                    <div class="col-6 col-md-3">
-                        <div class="card shadow border-0 mb-3">
-                            <div class="card-body">
-                                <div class="avatar avatar-60 no-shadow border-0">
-                                    <div class="overlay bg-template"></div>
-                                </div>
-                                <div class="text-center">
 
-                                    <!-- not done -->
-                                    <img id="theImage" src="assets/images/waiting.png" alt="" class="thumb-md rounded-circle mr-1">
-
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
                     <!-- my partner div -->
-                    <div class="col-6 col-md-3">
-                                              <div class="card shadow border-0 mb-3">
-                            <div class="card-body">
-                                <div class="avatar avatar-60 no-shadow border-0">
-                                    <div class="overlay bg-template"></div>
-                                </div>
-                                <div class="text-center">
 
-                                    <!-- not done -->
-                                    <img id="theImage" src="assets/images/waiting.png" alt="" class="thumb-md rounded-circle mr-1">
-
-                                </div>
-
-                            </div>
-                        </div>
-
-                    </div>
                 </div>
                 <!--  2 card -->
+
+                <!-- fsdfsd -->
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="mt-0">HTML</h5>
+                                    <p class="text-muted font-13 mb-4">Tooltips can contain HTML, allowing you to craft awesome interactive popovers.</p>
+                                    <div class="" >
+                                        <button class="btn btn-sm btn-primary tippy-btn" id="myElement" data-tippy-interactive="true" data-tippy-theme="light rounded" data-tippy-arrow="true" data-tippy-size="large" data-tippy-arrowTransform="scale(2)" data-tippy-animation="fade" data-tippy-distance="15" data-tippy-interactiveBorder="20" data-local>HTML Templates</button>
+                                        <div id="feature__html" data-template>
+                                            <div style="padding:20px"><img width="50" src="assets/images/logo-sm-dark.png" alt="" />
+                                                <h5>Look! The Amezia logo is inside a <strong>AMEZIA</strong>.</h5>
+                                                <button class="btn btn-sm btn-primary tippy-btn" data-close>Close</button>
+                                            </div>
+                                        </div>                                               
+                                    </div>
+                                </div>
+                            </div>
+
+                <!-- asf -->
 
             </div>
             <!-- Page fluid-->
@@ -275,10 +284,16 @@ margin-right: 20px;
     <script src="assets/plugins/jquery-knob/jquery.knob.min.js"></script>
     <script src="assets/pages/jquery.dashboard.init.js"></script>
 
+            <script src="assets/js/jquery.slimscroll.min.js"></script>
+
+        <script src="assets/plugins/tippy/tippy.all.min.js"></script> 
+        <script src="assets/pages/jquery.tooltipster.js"></script>
+
     <!-- App js -->
     <script src="assets/js/app.js"></script>
 
     <script>
+      // popover
         $(function () {
             // Enables popover
             $("[data-toggle=popover]").popover();
@@ -293,6 +308,10 @@ margin-right: 20px;
         // now make the button in another color!
 			)
 		});
+
+
+
+
     </script>
 </body>
 

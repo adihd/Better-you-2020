@@ -17,9 +17,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <!-- SweetAlert2 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js">
-     
-  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js"></script>
 
 
     <!--Morris Chart CSS -->
@@ -32,6 +30,10 @@
     <link href="assets/css/metismenu.min.css" rel="stylesheet" type="text/css">
     <link href="assets/css/style.css" rel="stylesheet" type="text/css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- emojitwitwer -->
+    <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
+
 
 </head>
 
@@ -159,46 +161,33 @@ margin-right: 20px;
             <div class="container-fluid">
                 <!-- 4 card  -->
                 <div class="row text-center mt-4">
-                  <p>
+                  <div class="col-12 col-md-6">
+                    <div class="card shadow border-0 mb-3" >
+
+                  <h1>points</h1>
+                  </div>
+                  </div>
                   </div>
                 <div class="row text-center mt-4">
                     <div class="col-6 col-md-3">
                       <h1>👧 Orel </h1>
-                        <!-- Stream video via webcam -->
-                        <div class="video-wrap">
-                            <video id="video" playsinline autoplay></video>
-                        </div>
-
-                        <!-- Trigger canvas web API -->
-                        <div class="controller">
-                            <button id="snap">Capture</button>
-                        </div>
-
-                        <!-- Video Snapshot -->
-                        <canvas id="canvas" width="640" height="480"></canvas>
-
-                        <!-- Save Captured Image -->
-                        <form method="POST" action="upload_image.php">
-  
-                            <button id="save_image" name="save_image" type="submit" value="Submit">Save Image</button>
-                        </form>
-                        <!-- <div class="card shadow border-0 mb-3">
+                        <div class="card shadow border-0 mb-3" style="background-color: #ff74cb;">
                             <div class="card-body">
                                 <div class="avatar avatar-60 no-shadow border-0">
                                     <div class="overlay bg-template"></div>
 
-                                </div> -->
+                                </div>
                                 <!-- popover button!!!!!!!!!! -->
                                 
-                                <!-- <button id="success" class="btn btn-primary text-light " type="button">
-                                    take a pick
+                                <button id="success" class="btn btn-primary text-light " type="button">
+                                    click to poke
                                 </button>
                             </div>
-                        </div> -->
+                        </div>
                     </div>
                     <div class="col-6 col-md-3">
                       <h1>🦄 Me </h1>
-                        <div class="card shadow border-0 mb-3">
+                        <div class="card shadow border-0 mb-3"style="background-color: #ff74cb;">
                             <div class="card-body">
                                 <div class="avatar avatar-60 no-shadow border-0">
                                     <div class="overlay bg-template"></div>
@@ -319,46 +308,6 @@ margin-right: 20px;
 			)
 		});
     </script>
-
-    <script>
-        
-        'use strict';
-        const video = document.getElementById('video');
-        const canvas = document.getElementById('canvas');
-        const snap = document.getElementById('snap');
-        const errorMsgElement = document.getElementById('spanErrorMsg');
-        const constraints = {
-            audio: false,
-            video: true
-        };
-        async function init(){
-            try{
-                const stream = await navigator.mediaDevices.getUserMedia(constraints);
-                handleSuccess(stream);
-            }
-            catch(e){
-                errorMsgElement.innerHTML = `navigator.getUserMedia.error:${e.toString()}`;
-            }
-        }
-        // Success
-        function handleSuccess(stream){
-            window.stream = stream;
-            video.srcObject = stream;
-        }
-        //Initialise
-        init();
-        //Draw Image
-        let context = canvas.getContext('2d');
-        snap.addEventListener("click", function(){
-            context.drawImage(video, 0, 0, 640, 480);
-            const myCanvas = document.querySelector("#canvas");
-            const dataURI = myCanvas.toDataURL();
-            document.getElementById("image_URI").value = dataURI;
-        });
-
-    </script>
-
-
 </body>
 
 </html>
