@@ -3,6 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<title>Better You</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+	<link rel="stylesheet" href="./pic_style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta content="A premium admin dashboard template by themesbrand" name="description">
 	<meta content="Themesbrand" name="author">
@@ -48,7 +50,7 @@
 
 	<!-- tippy -->
 	<button data-tippy-content="Tooltip">Text</button>
-<button data-tippy-content="Another Tooltip">Text</button>
+    <button data-tippy-content="Another Tooltip">Text</button>
 
 
 </head>
@@ -64,8 +66,8 @@
 margin-right: 20px;
 ">
             <a href="index.html" class="logo">
-              <!-- <span class="hidden-sm"> -->
-                <span >
+                <!-- <span class="hidden-sm"> -->
+                <span>
                     <img src="assets/images/logoadipink.jpg" alt="logo-large" class="logo-sm">
                 </span>
 
@@ -119,6 +121,7 @@ margin-right: 20px;
                                 <p class="notify-details">Your Teammate did their Task<small class="text-muted">Make
                                         their 10 points worth 30!</small></p>
                             </a>
+
                             <!-- item-->
                             <a href="javascript:void(0);" class="dropdown-item notify-item">
                                 <div class="notify-icon bg-danger"><i class="mdi mdi-message"></i></div>
@@ -137,7 +140,7 @@ margin-right: 20px;
                     <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown"
                         href="#" role="button" aria-haspopup="false" aria-expanded="false">
 
-<!-- <span class="ml-1 nav-user-name hidden-sm">Adi <i class="mdi mdi-chevron-down"></i> </span> -->
+                        <!-- <span class="ml-1 nav-user-name hidden-sm">Adi <i class="mdi mdi-chevron-down"></i> </span> -->
                         <span class="ml-1 nav-user-name">Adi <i class="mdi mdi-chevron-down"></i> </span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right">
@@ -177,63 +180,96 @@ margin-right: 20px;
             <div class="container-fluid">
                 <!-- 4 card  -->
                 <div class="row text-center mt-4">
-                  <div class="col-12 col-md-6">
-                    <div class="card shadow border-0 mb-3" >
-                  <h1 id="myHeader"></h1>
-                  <!-- <h1>Your team has 328 points</h1> -->
-                  </div>
-                  </div>
-                  </div>
+                    <div class="col-12 col-md-6">
+                        <div class="card shadow border-0 mb-3">
+                            <h1 id="myHeader"></h1>
+                            <!-- <h1>Your team has 328 points</h1> -->
+                        </div>
+                    </div>
+                </div>
                 <div class="row text-center mt-4">
+
                     <div class="col-6 col-md-3">
-                      <h1 id="partner_id">👧 Orel </h1>
+                        <h1>🦄 Me </h1>
+                                                    <h4>Account details</h4><br />
+      <div class="account-details"></div>
                         <div class="card shadow border-0 mb-3" style="background-color: #EC87C0;">
                             <div class="card-body">
+                                <!-- upload pic -->
+                                <!-- <div class="container"> -->
+                                </h1>
+                                <div class="avatar-upload">
+                                    <div class="avatar-preview">
+                                        <div id="imagePreview"
+                                            style="background-image: url(https://images2.minutemediacdn.com/image/upload/c_fill,g_auto,h_1248,w_2220/f_auto,q_auto,w_1100/v1555303893/shape/mentalfloss/monster_primary_0.png);">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- </div> -->
+                                <!-- dsadasd -->
                                 <div class="avatar avatar-60 no-shadow border-0">
                                     <div class="overlay bg-template"></div>
 
                                 </div>
                                 <!-- popover button!!!!!!!!!! -->
                                 
-                                <button id="success" class="btn btn-primary text-light " type="button">
-                                    click to remind Orel to do her habit
-                                </button>
+
+                                        <form class="form-inline"><input class="collapsed" type="checkbox" id="switch3" switch="bool" onclick="if(this.checked){markAsDone()}"> <label for="switch3" data-on-label="Yes" data-off-label="No" style="padding-left: 20px; margin-left: 20px;" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"></label></form>
 
 
-                                
+                                <div class="collapse" id="collapseExample" style="">
+                                    <div class="card-body">
+                                        <p id="uploadpic" class=" mb-4 font-13">
+                                            Good job! you can upload an image to get exsta points!
+                                        </p>
+                                    <!-- upload pic -->
+                                    <div class="avatar-edit">
+                                        <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
+                                        <label for="imageUpload"></label>
+                                    </div>
+                                    </button>
+
+
+
+
+                                </div>
+                                <!-- end row -->
+                                <!-- <div class="card"> -->
+                                <!-- upload pic -->
+
+
+                                <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'>
+                                </script>
+                                <script src="./pic_script.js"></script>
+                                <!-- upload pic -->
+                                <!-- </div> -->
                             </div>
                         </div>
+                        <!-- my div -->
+
+                        <!-- my partner div -->
+
                     </div>
+
                     <div class="col-6 col-md-3">
-                      <h1>🦄 Me </h1>
-                        <div class="card shadow border-0 mb-3"style="background-color: #EC87C0;">
-                            <div class="card-body">
+                        <h1 id="partner_id">👧 Orel </h1>
+                        <div class="card shadow border-0 mb-3" style="background-color: #EC87C0;">
+<div class="card-body">
                                 <div class="avatar avatar-60 no-shadow border-0">
                                     <div class="overlay bg-template"></div>
                                 </div>
                                 
-                                <button class="btn btn-primary text-light collapsed" type="button"
-                                    data-toggle="collapse" data-target="#collapseExample" aria-expanded="false"
-                                    aria-controls="collapseExample">
+                                <!-- <button class="btn btn-primary text-light collapsed" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"> -->
                                     click if you did your habit
-                                </button>
+                                <!-- </button> -->
                                 <!-- toggle data!!!!!!!!!!!!!!!!!! -->
 
-                                <div class="collapse" id="collapseExample">
-                                    <div class="card-body">
-                                        <p class="text-muted mb-4 font-13">
-                                            רוצה להעלות תמונה או פשוט לסמן?
-                                        </p>
-                                        <div class="button-list btn-social-icon">
-                                            <button type="button" class="btn btn-facebook">
-                                                <i class="fab fa-facebook"></i>
-                                            </button>
 
                                           
 
                                            
                                         <!-- tom -->
-                                        <form class="form-inline"><input type="checkbox" id="switch3" switch="bool" onclick="if(this.checked){markAsDone()}"> <label for="switch3" data-on-label="Yes" data-off-label="No" style="padding-left: 20px; margin-left: 20px;"></label></form>
+
 
                     
                                         <!-- </div> -->
@@ -242,39 +278,21 @@ margin-right: 20px;
                                 <!-- toggle data!!!!!!!!!!!!!!!!!! -->
                             </div>
                         </div>
+                        </div>
                     </div>
-                    <!-- my div -->
+                    <!--  2 card -->
 
-                    <!-- my partner div -->
+                    <!-- fsdfsd -->
+
+
+                    <!-- asf -->
 
                 </div>
-                <!--  2 card -->
-
-                <!-- fsdfsd -->
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="mt-0">HTML</h5>
-                                    <p class="text-muted font-13 mb-4">Tooltips can contain HTML, allowing you to craft awesome interactive popovers.</p>
-                                    <div class="" >
-                                        <button class="btn btn-sm btn-primary tippy-btn" id="myElement" data-tippy-interactive="true" data-tippy-theme="light rounded" data-tippy-arrow="true" data-tippy-size="large" data-tippy-arrowTransform="scale(2)" data-tippy-animation="fade" data-tippy-distance="15" data-tippy-interactiveBorder="20" data-local>HTML Templates</button>
-                                        <div id="feature__html" data-template>
-                                            <div style="padding:20px"><img width="50" src="assets/images/logo-sm-dark.png" alt="" />
-                                                <h5>Look! The Amezia logo is inside a <strong>AMEZIA</strong>.</h5>
-                                                <button class="btn btn-sm btn-primary tippy-btn" data-close>Close</button>
-                                            </div>
-                                        </div>                                               
-                                    </div>
-                                </div>
-                            </div>
-
-                <!-- asf -->
-
+                <!-- Page fluid-->
             </div>
-            <!-- Page fluid-->
+            <!-- Page Content-->
         </div>
-        <!-- Page Content-->
-    </div>
-    <!-- Page page-wrapper-->
+        <!-- Page page-wrapper-->
 
 
 
@@ -300,75 +318,74 @@ margin-right: 20px;
         <script src="assets/pages/jquery.tooltipster.js"></script>
 
 
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
+        <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
-<!-- <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-analytics.js"></script> -->
-  <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-firestore.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-functions.js"></script>
+        <!-- <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-analytics.js"></script> -->
+        <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-functions.js"></script>
 
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyB2Au2vtXQIyKSjOgek0kaZAjsM3vXcxJY",
-    authDomain: "betteryou1-1c7a4.firebaseapp.com",
-    databaseURL: "https://betteryou1-1c7a4.firebaseio.com",
-    projectId: "betteryou1-1c7a4",
-    storageBucket: "betteryou1-1c7a4.appspot.com",
-    messagingSenderId: "356574666550",
-    appId: "1:356574666550:web:a7330d9fd93f29bd135d97",
-    measurementId: "G-9CW47VHDH4"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-      const auth = firebase.auth();
-    const db = firebase.firestore();
-    const functions = firebase.functions();
-</script>
+        <script>
+            // Your web app's Firebase configuration
+            var firebaseConfig = {
+                apiKey: "AIzaSyB2Au2vtXQIyKSjOgek0kaZAjsM3vXcxJY",
+                authDomain: "betteryou1-1c7a4.firebaseapp.com",
+                databaseURL: "https://betteryou1-1c7a4.firebaseio.com",
+                projectId: "betteryou1-1c7a4",
+                storageBucket: "betteryou1-1c7a4.appspot.com",
+                messagingSenderId: "356574666550",
+                appId: "1:356574666550:web:a7330d9fd93f29bd135d97",
+                measurementId: "G-9CW47VHDH4"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            const auth = firebase.auth();
+            const db = firebase.firestore();
+            const functions = firebase.functions();
+        </script>
 
-    <!-- <script src="assets/js/app.js"></script> -->
-    <script src="scripts/points.js"></script>
-    <!-- <script src="scripts/prize.js"></script> -->
+        <!-- <script src="assets/js/app.js"></script> -->
+        <script src="scripts/points.js"></script>
 
-    <script>
-      // popover
-        $(function () {
-            // Enables popover
-            $("[data-toggle=popover]").popover();
-        });
+        <!-- <script src="scripts/prize.js"></script> -->
 
-// Alert Modal Type
-		$(document).on('click', '#success', function(e) {
-			swal(
-				'Success',
-				'You just <b style="color:green;">Poked</b> your partner!!!',
-				'success'
-        // now make the button in another color!
-			)
-		});
-    </script>
-    
-    <script>
-      // popover
-        $(function () {
-            // Enables popover
-            $("[data-toggle=popover]").popover();
-        });
+        <script>
+            // popover
+            $(function () {
+                // Enables popover
+                $("[data-toggle=popover]").popover();
+            });
 
-// Alert Modal Type
-		$(document).on('click', '#complete', function(e) {
-			swal(
-				'Success',
-				'You just updated your daily task status to <b style="color:green;">Complete</b> !!!',
-				'success'
-        // now make the button in another color!
-			)
-		});
+            // Alert Modal Type
+            $(document).on('click', '#success', function (e) {
+                swal(
+                    'Success',
+                    'You just <b style="color:green;">Poked</b> your partner!!!',
+                    'success'
+                    // now make the button in another color!
+                )
+            });
+        </script>
 
+        <script>
+            // popover
+            $(function () {
+                // Enables popover
+                $("[data-toggle=popover]").popover();
+            });
 
-    </script>
+            // Alert Modal Type
+            $(document).on('click', '#complete', function (e) {
+                swal(
+                    'Success',
+                    'You just updated your daily task status to <b style="color:green;">Complete</b> !!!',
+                    'success'
+                    // now make the button in another color!
+                )
+            });
+        </script>
+
 </body>
 
 </html>

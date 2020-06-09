@@ -1,3 +1,4 @@
+
 console.clear();
 
 // let points = 3;
@@ -56,7 +57,7 @@ var app2 = new Vue({
 
 let size = 5; // size x size tiles
 let bombFrequency = 0.2; // percentage of bombs
-let tileSize = 60;
+let tileSize = 34;
 
 
 

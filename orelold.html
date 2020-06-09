@@ -3,6 +3,9 @@
 <head>
     <meta charset="utf-8">
     <title>Better You</title>
+    <!-- vue app -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="assets/css/board_styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="A premium admin dashboard template by themesbrand" name="description">
     <meta content="Themesbrand" name="author">
@@ -146,8 +149,10 @@ margin-right: 20px;
     <div class="icon-bar">
         <a href="index.html"><i class="fa fa-home"></i></a>
         <a href="prize.html"><i class="fa fa-trophy"></i></a>
-        <a class="active" href="prog.html"><i class="fas fa-comments"></i></a>
-        <a href="game.html"><i class="fa fa-gamepad"></i></a>
+        <a  href="prog.html"><i class="fa fa-calendar"></i></a>
+        <a class="active" href="game.html"><i class="fa fa-gamepad"></i></a>
+        <a href="Orel.html"><i class="fa fa-birthday-cake"></i></a>
+        <!-- <a href="#"><i class="fa fa-trash"></i></a>  -->
     </div>
     <!-- Adi.End icon Bar footer-->
 
@@ -158,50 +163,76 @@ margin-right: 20px;
         <div class="page-content">
 
             <div class="container-fluid">
-            </div>
-              <!-- container & title -->
-  <div class="container my-4">
-    <h1 class="my-4 text-center">Ninja Chat</h1>
-    <!-- buttons for chatrooms -->
-    <div class="chat-rooms mb-3 text-center">
-      <div class="my-2">Choose a chatroom:</div>
-      <button class="btn" id="general">#general</button>
-      <button class="btn" id="gaming">#gaming</button>
-      <button class="btn" id="music">#music</button>
-      <button class="btn" id="ninjas">#ninjas</button>
+    
+
+
+    <!-- Stream video via webcam -->
+    <div class="video-wrap">
+        <video id="video" playsinline autoplay></video>
     </div>
-    <!-- chat list / window -->
-    <div class="chat-window">
-      <ul class="chat-list list-group"></ul>
+
+    <!-- Trigger canvas web API -->
+    <div class="controller">
+        <button id="snap">Capture</button>
     </div>
-    <!-- new chat form -->
-    <form class="new-chat my-3">
-      <div class="input-group">
-        <div class="input-group-prepend">
-          <div class="input-group-text">Your message:</div>
-        </div>
-        <input type="text" id="message" class="form-control" required>
-        <div class="input-group-append">
-          <input type="submit" class="btn" value="send">
-        </div>
-      </div>
+
+    <!-- Video Snapshot -->
+    <canvas id="canvas" width="640" height="480"></canvas>
+
+    <!-- Save Captured Image -->
+    <form method="POST" action="upload_image.php">
+        
+        <button id="save_image" name="save_image" type="submit" value="Submit">Save Image</button>
     </form>
-    <!-- update name form -->
-    <form class="new-name my-3">
-      <div class="input-group">
-        <div class="input-group-prepend">
-          <div class="input-group-text">Update name:</div>
-        </div>
-        <input type="text" id="name" class="form-control" required>
-        <div class="input-group-append">
-          <input type="submit" class="btn" value="update">
-        </div>
-      </div>
-      <div class="update-mssg text-center my-2"></div>
-    </form>
-  </div>
+    <script>
+        //https://www.youtube.com/watch?v=sL5-FhULalM
+        'use strict';
+        const video = document.getElementById('video');
+        const canvas = document.getElementById('canvas');
+        const snap = document.getElementById('snap');
+        const errorMsgElement = document.getElementById('spanErrorMsg');
+        const constraints = {
+            audio: false,
+            video: true
+        };
+        async function init(){
+            try{
+                const stream = await navigator.mediaDevices.getUserMedia(constraints);
+                handleSuccess(stream);
+            }
+            catch(e){
+                errorMsgElement.innerHTML = `navigator.getUserMedia.error:${e.toString()}`;
+            }
+        }
+        // Success
+        function handleSuccess(stream){
+            window.stream = stream;
+            video.srcObject = stream;
+        }
+        //Initialise
+        init();
+        //Draw Image
+        let context = canvas.getContext('2d');
+        snap.addEventListener("click", function(){
+            context.drawImage(video, 0, 0, 640, 480);
+            const myCanvas = document.querySelector("#canvas");
+            const dataURI = myCanvas.toDataURL();
+            document.getElementById("image_URI").value = dataURI;
+        });
+
+    </script>
                 <!-- end page content -->
             </div>
+            <!-- end page-wrapper -->
+              
+              
+
+        </div>
+    </div>
+             
+
+                <!-- end page content -->
+            
             <!-- end page-wrapper -->
 
 
@@ -254,15 +285,10 @@ margin-right: 20px;
   firebase.analytics();
   const db = firebase.firestore();
   </script>
-  <script src="scripts/chat.js"></script>
-  <script src="scripts/ui.js"></script>
-  <script src="scripts/app.js"></script>
 
+    <!--Plugins-->
+    <script src="assets/js/board.js"></script>
             
-
-
-
-
 
 </body>
 

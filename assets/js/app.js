@@ -5,6 +5,9 @@
  Module/App: App Js
  */
 
+function changecoloronclick() {
+  document.getElementById("success").style.color = "#b4ecb4";
+}
 
 // Set the date we're counting down to
 var countDownDate = new Date("June 30, 2020 15:37:25").getTime();
@@ -25,46 +28,15 @@ var x = setInterval(function() {
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
   // Display the result in the element with id="demo"
-  document.getElementById("countdown").innerHTML = days + " Days";
+  document.getElementById("demo").innerHTML = days + " Days";
 
   // If the count down is finished, write some text
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("countdown").innerHTML = "EXPIRED";
+    document.getElementById("demo").innerHTML = "EXPIRED";
   }
 }, 1000);
 
-// window.onload = function () {
-
-// var chart = new CanvasJS.Chart("chartContainer", {
-// 	animationEnabled: true,
-// 	theme: "light2", // "light1", "light2", "dark1", "dark2"
-// 	title:{
-// 		text: "Top Rated"
-// 	},
-// 	axisY: {
-// 		title: "Points"
-// 	},
-// 	data: [{
-// 		type: "column",
-// 		showInLegend: true,
-// 		legendMarkerColor: "grey",
-// 		legendText: "Friends",
-// 		dataPoints: [
-// 			{ y: 420, label: "Nitai" },
-// 			{ y: 389,  label: "Adi" },
-// 			{ y: 302,  label: "Tom" },
-// 			{ y: 279,  label: "Orel" },
-// 			{ y: 248,  label: "Omer" },
-// 			{ y: 231, label: "Maya" },
-// 			{ y: 230,  label: "Aviv" },
-// 			{ y: 226,  label: "Hadar" }
-// 		]
-// 	}]
-// });
-// chart.render();
-
-// }
 
 (function ($) {
 

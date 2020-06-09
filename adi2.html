@@ -3,6 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<title>Better You</title>
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+	<link rel="stylesheet" href="./pic_style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta content="A premium admin dashboard template by themesbrand" name="description">
 	<meta content="Themesbrand" name="author">
@@ -252,19 +254,26 @@ margin-right: 20px;
 
                 <!-- fsdfsd -->
                             <div class="card">
-                                <div class="card-body">
-                                    <h5 class="mt-0">HTML</h5>
-                                    <p class="text-muted font-13 mb-4">Tooltips can contain HTML, allowing you to craft awesome interactive popovers.</p>
-                                    <div class="" >
-                                        <button class="btn btn-sm btn-primary tippy-btn" id="myElement" data-tippy-interactive="true" data-tippy-theme="light rounded" data-tippy-arrow="true" data-tippy-size="large" data-tippy-arrowTransform="scale(2)" data-tippy-animation="fade" data-tippy-distance="15" data-tippy-interactiveBorder="20" data-local>HTML Templates</button>
-                                        <div id="feature__html" data-template>
-                                            <div style="padding:20px"><img width="50" src="assets/images/logo-sm-dark.png" alt="" />
-                                                <h5>Look! The Amezia logo is inside a <strong>AMEZIA</strong>.</h5>
-                                                <button class="btn btn-sm btn-primary tippy-btn" data-close>Close</button>
-                                            </div>
-                                        </div>                                               
-                                    </div>
-                                </div>
+                                        <!-- upload pic -->
+    <div class="container">
+        </h1>
+        <div class="avatar-upload">
+            <div class="avatar-edit">
+                <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
+                <label for="imageUpload"></label>
+            </div>
+            <div class="avatar-preview">
+                <div id="imagePreview"
+                    style="background-image: url(https://images2.minutemediacdn.com/image/upload/c_fill,g_auto,h_1248,w_2220/f_auto,q_auto,w_1100/v1555303893/shape/mentalfloss/monster_primary_0.png);">
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+    <script src="./pic_script.js"></script>
+    <!-- upload pic -->
+
                             </div>
 
                 <!-- asf -->
@@ -330,6 +339,7 @@ margin-right: 20px;
 
     <!-- <script src="assets/js/app.js"></script> -->
     <script src="scripts/points.js"></script>
+    
     <!-- <script src="scripts/prize.js"></script> -->
 
     <script>
@@ -369,6 +379,7 @@ margin-right: 20px;
 
 
     </script>
+
 </body>
 
 </html>

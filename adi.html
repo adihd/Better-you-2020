@@ -3,6 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<title>Better You</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+	<link rel="stylesheet" href="./pic_style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta content="A premium admin dashboard template by themesbrand" name="description">
 	<meta content="Themesbrand" name="author">
@@ -14,19 +16,11 @@
 	<link rel="stylesheet" href="vendor/materializeicon/material-icons.css">
 
 	<!-- jQuery -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/emmet/2.1.1/emmet.cjs.js">
-
-	</script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.0.0-beta.14/vue.min.js">
-
-	</script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-
 	</script>
 	<!-- SweetAlert2 -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.min.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js">
-
 	</script>
 
 
@@ -43,8 +37,12 @@
 
 	<!-- emojitwitwer -->
 	<script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous">
-
 	</script>
+
+
+	<!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"> -->
+
 
 	<!-- tippy -->
 	<button data-tippy-content="Tooltip">Text</button>
@@ -160,7 +158,7 @@ margin-right: 20px;
     <!-- Adi.Start icon Bar footer -->
     <div class="icon-bar">
         <a class="active" href="forms.html"><i class="fa fa-home"></i></a>
-        <a href="prize-tom.html"><i class="fa fa-trophy"></i></a>
+        <a href="prize.html"><i class="fa fa-trophy"></i></a>
         <a href="prog.html"><i class="fa fa-calendar"></i></a>
         <a href="game.html"><i class="fa fa-gamepad"></i></a>
         <a href="Orel.html"><i class="fa fa-birthday-cake"></i></a>
@@ -174,102 +172,25 @@ margin-right: 20px;
         <!-- Page Content-->
         <div class="page-content">
             <!-- Page fluid-->
-            <div class="container-fluid">
-                <!-- 4 card  -->
-                <div class="row text-center mt-4">
-                  <div class="col-12 col-md-6">
-                    <div class="card shadow border-0 mb-3" >
-                  <h1 id="myHeader"></h1>
-                  <!-- <h1>Your team has 328 points</h1> -->
-                  </div>
-                  </div>
-                  </div>
-                <div class="row text-center mt-4">
-                    <div class="col-6 col-md-3">
-                      <h1 id="partner_id">👧 Orel </h1>
-                        <div class="card shadow border-0 mb-3" style="background-color: #EC87C0;">
-                            <div class="card-body">
-                                <div class="avatar avatar-60 no-shadow border-0">
-                                    <div class="overlay bg-template"></div>
-
-                                </div>
-                                <!-- popover button!!!!!!!!!! -->
-                                
-                                <button id="success" class="btn btn-primary text-light " type="button">
-                                    click to remind Orel to do her habit
-                                </button>
-
-
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-3">
-                      <h1>🦄 Me </h1>
-                        <div class="card shadow border-0 mb-3"style="background-color: #EC87C0;">
-                            <div class="card-body">
-                                <div class="avatar avatar-60 no-shadow border-0">
-                                    <div class="overlay bg-template"></div>
-                                </div>
-                                
-                                <button class="btn btn-primary text-light collapsed" type="button"
-                                    data-toggle="collapse" data-target="#collapseExample" aria-expanded="false"
-                                    aria-controls="collapseExample">
-                                    click if you did your habit
-                                </button>
-                                <!-- toggle data!!!!!!!!!!!!!!!!!! -->
-
-                                <div class="collapse" id="collapseExample">
-                                    <div class="card-body">
-                                        <p class="text-muted mb-4 font-13">
-                                            רוצה להעלות תמונה או פשוט לסמן?
-                                        </p>
-                                        <div class="button-list btn-social-icon">
-                                            <button type="button" class="btn btn-facebook">
-                                                <i class="fab fa-facebook"></i>
-                                            </button>
-
-                                          
-
-                                           
-                                        <!-- tom -->
-                                        <form class="form-inline"><input type="checkbox" id="switch3" switch="bool" onclick="if(this.checked){markAsDone()}"> <label for="switch3" data-on-label="Yes" data-off-label="No" style="padding-left: 20px; margin-left: 20px;"></label></form>
-
-                    
-                                        <!-- </div> -->
-                                    </div>
-                                </div>
-                                <!-- toggle data!!!!!!!!!!!!!!!!!! -->
-                            </div>
-                        </div>
-                    </div>
-                    <!-- my div -->
-
-                    <!-- my partner div -->
-
-                </div>
-                <!--  2 card -->
-
-                <!-- fsdfsd -->
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="mt-0">HTML</h5>
-                                    <p class="text-muted font-13 mb-4">Tooltips can contain HTML, allowing you to craft awesome interactive popovers.</p>
-                                    <div class="" >
-                                        <button class="btn btn-sm btn-primary tippy-btn" id="myElement" data-tippy-interactive="true" data-tippy-theme="light rounded" data-tippy-arrow="true" data-tippy-size="large" data-tippy-arrowTransform="scale(2)" data-tippy-animation="fade" data-tippy-distance="15" data-tippy-interactiveBorder="20" data-local>HTML Templates</button>
-                                        <div id="feature__html" data-template>
-                                            <div style="padding:20px"><img width="50" src="assets/images/logo-sm-dark.png" alt="" />
-                                                <h5>Look! The Amezia logo is inside a <strong>AMEZIA</strong>.</h5>
-                                                <button class="btn btn-sm btn-primary tippy-btn" data-close>Close</button>
-                                            </div>
-                                        </div>                                               
-                                    </div>
-                                </div>
-                            </div>
-
-                <!-- asf -->
-
+            <!-- upload pic -->
+    <div class="container">
+        </h1>
+        <div class="avatar-upload">
+            <div class="avatar-edit">
+                <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
+                <label for="imageUpload"></label>
             </div>
+            <div class="avatar-preview">
+                <div id="imagePreview"
+                    style="background-image: url(https://images2.minutemediacdn.com/image/upload/c_fill,g_auto,h_1248,w_2220/f_auto,q_auto,w_1100/v1555303893/shape/mentalfloss/monster_primary_0.png);">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- upload pic -->
+    <!-- partial -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+    <script src="./pic_script.js"></script>
             <!-- Page fluid-->
         </div>
         <!-- Page Content-->
@@ -330,7 +251,6 @@ margin-right: 20px;
 
     <!-- <script src="assets/js/app.js"></script> -->
     <script src="scripts/points.js"></script>
-    <!-- <script src="scripts/prize.js"></script> -->
 
     <script>
       // popover
