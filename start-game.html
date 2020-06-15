@@ -32,7 +32,7 @@
 					<div class="card">
 						<div class="card-body">
 							<div class="countdown">
-								<h4>DAYS LEFT TO CHALLENGE</h4>
+								<h4>Welcome to <span id="challengename" style="color:pink;"></span> challenge</h4>
 								<p id="demo"></p>
 							</div>
 						</div>
@@ -42,15 +42,18 @@
 				<div class="card">
 
 					<div class="card-body donut">
-						<h5 class="mt-0">Select your buddy</h5>
+						<h5 class="mt-0">The buddy system</h5>
 
-						<p class="text-muted font-13 mb-4">Choose your buddy for this challenge</p>
-						<div class="row">
+						<p class="text-muted font-13 mb-4">Once your friends join you can select your buddy to compete with against the rest of the couples. Every day you
+							both do the habbit you will get bonus points.</p>
+
+              
+						<div class="row" style="display:flex;align-items:center;justify-content:center;">
 
 							<div class="dropdown mo-mb-2" style="width:60%;">
 								<div>
 									<select id="pairs_selection" class="custom-select" onchange="save_buddy()">
-                                                        <option selected="">Buddies</option>
+                                                        <option selected="">Choose your buddy</option>
                                                         
                                                     </select>
                                 </div>
@@ -62,6 +65,7 @@
                                                      Pair Up
                                                 </button>
                                     </div>
+                                   
                               <br>
                           
                                         
@@ -148,6 +152,7 @@
             <script src="assets/pages/jquery.dashboard.init.js"></script>
             <!-- App js -->
             <!-- <script src="assets/js/app.js"></script> -->
+            <script src="scripts/auth.js"></script>
             <script src="scripts/start_game.js"></script>
 
 

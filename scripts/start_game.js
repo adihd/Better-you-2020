@@ -1,6 +1,9 @@
 const pair_selection = document.querySelector('#pairs_selection'); 
 const table = document.querySelector('#tbl');
 
+const game_name = document.querySelector('#challengename');
+
+
 var buddy = "";
 
 //! todo : need to change it when user is working
@@ -26,15 +29,20 @@ month.set("12", "December");
 
 
 
-// const setupID = (user) => {
-//   if (user) {
-//     userid = user.uid;
-//   } else {
-//     userid = "";
-//   }
-// };
+const setupID = (user) => {
+  if (user) {
+    userid = user.uid;
+    setUp(userid);
+    
+  } else {
+    userid = "";
+  }
+};
 
-userid = temp_userid;
+
+
+// userid = temp_userid;
+
 
 function renderPairs(doc){
 
@@ -83,7 +91,7 @@ function pair_buddies()
 
 function  addPairsToList(doc, c)
 {
-  
+  console.log(userid);
   let pair = document.createElement('tr');
   let index = document.createElement('th');
   let p1 = document.createElement('td');
@@ -106,42 +114,63 @@ function  addPairsToList(doc, c)
    var c = 1;
 
  
-//get users from the same game of the conected user, that are paired
- db.collection('users').where("user_id", "==", userid).onSnapshot(snapshot =>{
-          snapshot.docs.forEach(doc => {
-          var g_code = doc.data().game_code;
-          db.collection('users').where("paired", "==",true).where("game_code", "==",g_code).onSnapshot(snapshot =>{
-    snapshot.docs.forEach(doc => {
-          if(!pairsSet.has(doc.data().name))
-         {
-          addPairsToList(doc, c);
-          c = c + 1;
-         }
-         
-    });
-    
-  })
-          
+ function setUp(userid)
+{
+      //get users from the same game of the conected user, that are paired
+    db.collection('users').where("user_id", "==", userid).onSnapshot(snapshot =>{
+              snapshot.docs.forEach(doc => {
+              var g_code = doc.data().game_code;
+              db.collection('users').where("paired", "==",true).where("game_code", "==",g_code).onSnapshot(snapshot =>{
+        snapshot.docs.forEach(doc => {
+              if(!pairsSet.has(doc.data().name))
+            {
+              addPairsToList(doc, c);
+              c = c + 1;
+            }
+            
+        });
         
-          });
-          })
+      })
+              
+            
+              });
+              })
 
-//get users from the same game of the conected user, that are not paired
- db.collection('users').where("user_id", "==", userid).get().then((snapshot) =>{
-          snapshot.docs.forEach(doc => {
-          var g_code = doc.data().game_code;
-          db.collection('users').where("paired", "==",false).where("game_code", "==",g_code).get().then((snapshot) =>{
+    //get users from the same game of the conected user, that are not paired
+    db.collection('users').where("user_id", "==", userid).get().then((snapshot) =>{
+              snapshot.docs.forEach(doc => {
+              var g_code = doc.data().game_code;
+              db.collection('users').where("paired", "==",false).where("game_code", "==",g_code).get().then((snapshot) =>{
+        snapshot.docs.forEach(doc => {
+            
+            renderPairs(doc);
+            
+            
+        });
+        
+      })
+              
+            
+              });
+              })
+
+  db.collection('users').where("user_id", "==", userid).get().then((snapshot) =>{
+  snapshot.docs.forEach(doc => {
+  var g_code = doc.data().game_code;
+  db.collection('create_game').where("game_code", "==" ,g_code).get().then((snapshot) =>{
     snapshot.docs.forEach(doc => {
-         renderPairs(doc);
+        //  console.log("hi");
+        game_name.innerHTML = doc.data().name;
+         setCountDown(doc)
          
          
     });
     
   })
-          
-        
           });
           })
+}
+
 
 
 
@@ -179,7 +208,7 @@ function setCountDown(doc)
 
   
   // Display the result in the element with id="demo"
-  document.getElementById("demo").innerHTML = days + " Days";
+  document.getElementById("demo").innerHTML = days + " Days left until the challenge begins";
 
   // If the count down is finished, write some text
   if (distance < 0) {
@@ -190,20 +219,7 @@ function setCountDown(doc)
 }
 
 
- db.collection('users').where("user_id", "==", userid).get().then((snapshot) =>{
-          snapshot.docs.forEach(doc => {
-          var g_code = doc.data().game_code;
-          db.collection('create_game').where("game_code", "==" ,g_code).get().then((snapshot) =>{
-    snapshot.docs.forEach(doc => {
-         console.log("hi");
-         setCountDown(doc)
-         
-         
-    });
-    
-  })
-          });
-          })
+
 
 
 

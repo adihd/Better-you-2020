@@ -30,6 +30,14 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js">
 
 	</script>
+  <script>
+    function changeColorOnClick(){
+      //change color of poke button once clicked
+      document.getElementById('success').value = 'Poke Again';
+      // document.getElementById('success').style.color = 'green';
+      return false;
+    }
+  </script>
 
 
 	<!--Morris Chart CSS -->
@@ -90,7 +98,7 @@ margin-right: 20px;
                     </a>
                     <div class="dropdown-menu dropdown-menu-right">
 
-                        <a class="dropdown-item" href="#"><i class="dripicons-exit text-muted mr-2"></i> Logout</a>
+                        <a id="logout" class="dropdown-item" href="#"><i class="dripicons-exit text-muted mr-2"></i> Logout</a>
                     </div>
                 </li>
             </ul>
@@ -103,7 +111,7 @@ margin-right: 20px;
 
     <!-- Adi.Start icon Bar footer -->
     <div class="icon-bar">
-        <a class="active" href="forms.html"><i class="fa fa-home"></i></a>
+        <a class="active" href="home2.html"><i class="fa fa-home"></i></a>
         <a href="prize-tom.html"><i class="fa fa-trophy"></i></a>
         <a href="prog.html"><i class="fas fa-comments"></i></a>
         <a href="game.html"><i class="fa fa-gamepad"></i></a>
@@ -153,7 +161,7 @@ margin-right: 20px;
                         <div class="card shadow border-0 mb-3 col" style="background-color: white;">
                             <div class="card-body">
 
-                              <h3> Did you do your habbit today?</h3>
+                              <h4> Did you do your habit today?</h4>
                                 <!-- </div> -->
                                 <!-- dsadasd -->
                                 <div class="avatar avatar-60 no-shadow border-0">
@@ -178,10 +186,13 @@ margin-right: 20px;
                                         </p>
                                         <!-- upload pic -->
                                         <div class="avatar-edit">
+                                          <div class="upload-btn-wrapper">
+                                            <button class="btn btn-primary">Upload a file</button>
                                             <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
                                             <label for="imageUpload"></label>
+                                            </div>
                                         </div>
-                                        </button>
+                                        <!-- </button> -->
 
 
 </div>
@@ -241,11 +252,8 @@ margin-right: 20px;
 
                                 <!-- upload img -->
                                 </div>
-                                <h3 id="click_to_remind"></h3>
-                                <button id="success" class="btn btn-primary text-light col" type="button" style="
-    margin-bottom: 30px;" onclick="changecoloronclick()">
-                                    Poke
-                                </button>
+                                <h5> Remind your buddy to do their habit </h5>
+                                <input id="success" class="btn btn-primary text-light col" type="button" style="margin-bottom: 30px;" onclick="changeColorOnClick();" value="Poke"/>
                               </div>
                             </div>
 
@@ -341,9 +349,9 @@ margin-right: 20px;
 
         <!-- <script src="assets/js/app.js"></script> -->
 
-        <!-- <script src="scripts/auth.js"></script> -->
+        <script src="scripts/auth.js" ></script>
         <!-- <script src="scripts/points.js"></script> -->
-        <script src="scripts/home.js"></script>
+        <script src="scripts/home.js" ></script>
 
         <!-- <script src="scripts/prize.js"></script> -->
 
@@ -361,6 +369,7 @@ margin-right: 20px;
                     'You just <b style="color:green;">Poked</b> your partner!!!',
                     'success'
                     // now make the button in another color!
+                    // document.getElementById('success').style.color = 'green';
                 )
             });
         </script>

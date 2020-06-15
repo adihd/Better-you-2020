@@ -9,8 +9,16 @@ const temp_userid = "tomID";
 // userid
 let userid = ""
 
+const setupID = (user) => {
+  if (user) {
+    userid = user.uid;
+    setUp(userid);
+  } else {
+    userid = "";
+  }
+};
 
-userid = temp_userid;
+// userid = temp_userid;
 
 let month = new Map()
 month.set("01", "January");
@@ -49,20 +57,7 @@ function markAsDone() {
 
 }
 
-  //not realtime update
-  db.collection('users').where('user_id', '==', userid).onSnapshot(snapshot =>{
-      snapshot.docs.forEach(doc => {
-        const html = `<h1>${doc.data().user_emoji} Me</h1>`;
-        userEmoji.innerHTML = html;
-        const htmli = `<h1>${doc.data().partner_emoji} ${doc.data().partner_name}</h1>`;
-            partnerEmoji[0].innerHTML = htmli;
 
-        var s1 =  doc.data().partner_name;
-        console.log(s1);
-        var string2 = 'Click to remind ' + s1 + ' to do her habit';
-        document.getElementById("click_to_remind").innerHTML = string2;
-      });
-  })
 
 
 
@@ -72,13 +67,7 @@ var oneP = 10;
 var twoP = 20;
 
 
- //realtime update on html
-db.collection('users').where('user_id', '==', userid).onSnapshot(snapshot =>{
-    snapshot.docs.forEach(doc => {
-       setPointsInHtml(doc);
-      
-    });
-})
+
 
 
 function setPointsInHtml(doc){
@@ -162,7 +151,35 @@ function setCountDown(doc)
 }, 1000);
 }
 
- db.collection('users').where("user_id", "==", userid).get().then((snapshot) =>{
+
+
+
+
+function setUp(userid)
+{
+    //not realtime update
+  db.collection('users').where('user_id', '==', userid).onSnapshot(snapshot =>{
+      snapshot.docs.forEach(doc => {
+        const html = `<h1>${doc.data().user_emoji} Me</h1>`;
+        userEmoji.innerHTML = html;
+        const htmli = `<h1>${doc.data().partner_emoji} ${doc.data().partner_name}</h1>`;
+            partnerEmoji[0].innerHTML = htmli;
+
+        var s1 =  doc.data().partner_name;
+        console.log(s1);
+        var string2 = 'Click to remind ' + s1 + ' to do her habit';
+        document.getElementById("click_to_remind").innerHTML = string2;
+      });
+  })
+  
+   //realtime update on html
+    db.collection('users').where('user_id', '==', userid).onSnapshot(snapshot =>{
+        snapshot.docs.forEach(doc => {
+          setPointsInHtml(doc);
+          
+        });
+    })
+   db.collection('users').where("user_id", "==", userid).get().then((snapshot) =>{
           snapshot.docs.forEach(doc => {
           var g_code = doc.data().game_code;
           db.collection('create_game').where("game_code", "==" ,g_code).get().then((snapshot) =>{
@@ -176,14 +193,14 @@ function setCountDown(doc)
   })
           });
           })
-
-    //not realtime update
+      //not realtime update
   db.collection('users').where('user_id', '==', userid).onSnapshot(snapshot =>{
       snapshot.docs.forEach(doc => {
         user_name.textContent = doc.data().name;
 
       });
   })
+}
 
 
 

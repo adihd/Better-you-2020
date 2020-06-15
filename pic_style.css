@@ -54,10 +54,12 @@ h1 small {
   transition: all 0.2s ease-in-out;
 }
 
+
 .avatar-upload .avatar-edit input+label:hover {
   background: #f1f1f1;
   border-color: #d6d6d6;
 }
+
 
 .avatar-upload .avatar-edit input+label:after {
   content: "\f040";
@@ -89,4 +91,42 @@ h1 small {
   background-position: center;
 }
 
+.imageUpload {
+    position: absolute;
+    z-index: 1000;
+    opacity: 0;
+    cursor: pointer;
+    right: 0;
+    top: 0;
+    height: 100%;
+    font-size: 24px;
+    width: 100%;
+    
+}
+
+
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+/* .btn {
+  border: 2px solid gray;
+  color: gray;
+  background-color: red;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+} */
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
 /* rgb(215, 112, 173)
+

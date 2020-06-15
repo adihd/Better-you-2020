@@ -1,23 +1,28 @@
 //get reference from html
 const pairs_point_status = document.querySelector('#pairs_point_status'); 
 
+const user_name = document.querySelector('#user_name_at_nav');
+
+const prize = document.querySelector('#the_big_prize');
+
 let pairsSet = new Set();
 
-const temp_userid = "tomID";
+// const temp_userid = "tomID";
 
 let userid = ""
 
 
-// const setupID = (user) => {
-//   if (user) {
-//     userid = user.uid;
-//   } else {
-//     userid = "";
-//   }
-// };
+const setupID = (user) => {
+  if (user) {
+    userid = user.uid;
+    setUp(userid);
+  } else {
+    userid = "";
+  }
+};
 
 
-userid = temp_userid;
+// userid = temp_userid;
 
 function renderPairs(doc){
 
@@ -64,21 +69,46 @@ function renderPairs(doc){
    
 }
 
- function setPictureSrc(doc)
+function setPictureSrc(doc)
+{
+  if(doc.data().my_status && doc.data().partner_status)
   {
-    if(doc.data().my_status && doc.data().partner_status)
-    {
-      return "assets/images/Star.png"
-    }
-    else 
-    {
-      return "assets/images/poop.png"
-    }
+    return "assets/images/Star.png"
   }
+  else 
+  {
+    return "assets/images/poop.png"
+  }
+}
 
 
 
-//get users from the same game of the conected user, that are paired
+function setUp(userid)
+{
+  let prize = new Map()
+  prize.set("Pizza", 0);
+  prize.set("Hamburger", 0);
+  prize.set("Movie&Popcorn", 0);
+
+  //set prize
+   db.collection('users').where("user_id", "==", userid).get().then((snapshot) =>{
+          snapshot.docs.forEach(doc => {
+          var g_code = doc.data().game_code;
+          db.collection('users').where("game_code", "==",g_code).get().then((snapshot) =>{
+    snapshot.docs.forEach(doc => {
+      if(doc.data().prize_idea == "Pizza") prize.set("Pizza", prize.get("Pizza") + 1);
+      console.log(prize.get("Pizza"));
+         
+         
+    });
+    
+  })
+          
+        
+          });
+          })
+
+  //get users from the same game of the conected user, that are paired
  db.collection('users').where("user_id", "==", userid).get().then((snapshot) =>{
           snapshot.docs.forEach(doc => {
           var g_code = doc.data().game_code;
@@ -94,6 +124,13 @@ function renderPairs(doc){
         
           });
           })
- 
 
+          //not realtime update
+  db.collection('users').where('user_id', '==', userid).onSnapshot(snapshot =>{
+      snapshot.docs.forEach(doc => {
+        user_name.textContent = doc.data().name;
+
+      });
+  })
+}
   

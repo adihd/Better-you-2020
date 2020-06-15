@@ -1,28 +1,25 @@
-// listen for auth status changes תראה אם המשתמש מתחבר או מתמנתק
 
 
 
-//  בודק האם המשתמש מתחבר או מתנתק אם יש שינוי אז קורא לפונקציות
-// ! בדיקה האם המשתמש מחובר או לא 
+// listen for auth status changes 
 //  /////////////////////////////////////////////////////////////////////////
-
 
 auth.onAuthStateChanged(user => {
   console.log(user);
   // if the user log in show this contect
   if (user) {
-    // אם המשתמש מתחבר
+    // ×× ×”×ž×©×ª×ž×© ×ž×ª×—×‘×¨
     db.collection('guides').onSnapshot(snapshot => {
       // setupGuides(snapshot.docs);
-      // תתחבר ותשנה את היו אי בהתאם!!
+      // ×ª×ª×—×‘×¨ ×•×ª×©× ×” ××ª ×”×™×• ××™ ×‘×”×ª××!!
       console.log("user is login");
-      console.log(user);
+      // console.log(user);
       // setupUI(user);
       setupID(user);
     }, err => console.log(err.message));
     // if the user is log out show this : log out null!
   } else {
-    // אם המשתמש מתנתק
+    // ×× ×”×ž×©×ª×ž×© ×ž×ª× ×ª×§
     console.log("user is logout and its null")
     // setupUI();
     setupID();
@@ -36,10 +33,12 @@ auth.onAuthStateChanged(user => {
 //   //Code here
 // }
 
-// ! הרשמה לאפליקציה
+// ! ×”×¨×©×ž×” ×œ××¤×œ×™×§×¦×™×”
 //  /////////////////////////////////////////////////////////////////////////
 // !emojipicker
 var useremoji1 = ""
+var urladi = window.location.href;
+var gameCode = "";
 
 $(document).ready(function () {
   var el = $("#standalone").emojioneArea({
@@ -68,12 +67,14 @@ signupForm.addEventListener('submit', (e) => {
   auth.createUserWithEmailAndPassword(email, password).then(cred => {
     // alert(signupForm['signup-name'].value);
     console.log("user signin success!!!")
+     if (window.location.href.indexOf("forms-invited") > -1) {gameCode = urladi.split("=").pop();}
     return db.collection('users').doc(cred.user.uid).set({
+           
       // mail: signupForm['signup-email'].value,
       name: signupForm['signup-name'].value,
       mail: email,
       my_status: false,
-      game_code: "",
+      game_code: gameCode,
       game_points: 0,
       habit: "",
       max_points: 1000,
@@ -83,16 +84,20 @@ signupForm.addEventListener('submit', (e) => {
       user_id: cred.user.uid,
       prize_idea: "",
       user_emoji: useremoji,
-      paired: false
+      paired: false,
+      partner_status:false
     });
+
+  
+
   }).then(() => {
     // close the signup modal & reset form
     // window.location.href = "forms-code.html";
     // const modal = document.querySelector('#modal-signup');
     // M.Modal.getInstance(modal).close();
-    console.log("user data signin success!!!")
+    console.log("user data signin success - tom!!!")
     signupForm.reset();
-    window.location.replace("forms-code.html");
+    window.location.replace("indexold.html");
     // go to the next page
 
     // $(window).load(function () {
@@ -102,8 +107,67 @@ signupForm.addEventListener('submit', (e) => {
   });
 });
 
+// // listen for auth status changes תראה אם המשתמש מתחבר או 
+// let gameCode = "";
+// let existCode = [];
+
+// // create a list with gamecodes from the backend
+// db.collection('create_game').onSnapshot(snapshot => {
+//     snapshot.docs.forEach(doc => {
+//         existCode.push(doc.data().game_code)
+
+//     });
+// })
+
+// var urladi = window.location.href;
+// if (window.location.href.indexOf("forms-info") > -1) {
+//     gameCode = urladi.split("=").pop();
+//     alert(gameCode);
+// };
+
+
+function gamePin(){
+
+    var inputVal = document.getElementById("game-pin").value;
+    check(inputVal);
+    
+    
+
+
+}
+
+function check(inputVal)
+{     var a = "";
+      db.collection('create_game').orderBy("start_date", "asc").get().then((snapshot) => {
+        snapshot.docs.forEach(doc => {
+            if(doc.data().game_code == inputVal)
+             {
+               console.log("right_code")
+               get_true("t", inputVal)
+               a = "t"
+             }
+             else if(doc.data().end == true && a !="t") alert("the code is not correct!")
+             
+
+        });
+    })
+
+}
+
+function get_true(v, inputVal)
+{
+
+
+  if(v == "t") {
+        window.document.location = "./forms-invited.html" + "?codeGame=" + inputVal;
+  } 
+      // alert(gameCode);
+  
+}
+
+
 //  /////////////////////////////////////////////////////////////////////////
-// ! התנתקות מהאפליקציה
+// ! ×”×ª× ×ª×§×•×ª ×ž×”××¤×œ×™×§×¦×™×”
 //  /////////////////////////////////////////////////////////////////////////
 
 // // logout
@@ -113,7 +177,7 @@ signupForm.addEventListener('submit', (e) => {
 //   auth.signOut();
 // });
 
-// ! התחברות לוג אין לאפליקציה
+// ! ×”×ª×—×‘×¨×•×ª ×œ×•×’ ××™×Ÿ ×œ××¤×œ×™×§×¦×™×”
 // login
 // const loginForm = document.querySelector('#login-form');
 // loginForm.addEventListener('submit', (e) => {

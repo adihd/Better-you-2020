@@ -51,6 +51,8 @@ function create_game()
   .catch(function(error) {
       console.error("Error writing document: ", error);
   });
+  window.document.location = "./forms-invited-create.html" + "?codeGame=" + g_code;
+  // window.location.replace("forms-invited-create.html");
 
 
 }
