@@ -3,8 +3,6 @@ const guideList = document.querySelector('.guides');
 const loggedOutLinks = document.querySelectorAll('.logged-out');
 const loggedInLinks = document.querySelectorAll('.logged-in');
 const accountDetails = document.querySelector('.account-details');
-// const admin_name = document.querySelector('.adminname');
-const admin_name = document.querySelector('#adminname');
 
 let userid = "";
 let inputprize = "";
@@ -13,7 +11,6 @@ var gameCode ="";
 var urladi = window.location.href;
 // var urladi = window.location.href;
 // var gameCode = "";
-
 
 
 
@@ -79,9 +76,19 @@ document.addEventListener('DOMContentLoaded', function () {
 ////////////////////////////////////////////////////////////////////////////////
 // seting habit and prize idea in firestoer //////////////////////////////////////////////////////
 function setHabitprize() {
+  if (window.location.href.indexOf("forms-invited") > -1) {gameCode = urladi.split("=").pop();}
+
+    db.collection("create_game").where("game_code", "==", gameCode).onSnapshot(snapshot => {
+    snapshot.docs.forEach(doc => {
+         db.collection("create_game").doc(doc.id).update({
+    admin: userid
+         })
+    });
+    });
+
   db.collection('users').where('user_id', '==', userid).onSnapshot(snapshot => {
     snapshot.docs.forEach(doc => {
-      if (window.location.href.indexOf("forms-invited") > -1) {gameCode = urladi.split("=").pop();}
+      
       db.collection('users').doc(doc.id).update({
         habit: inputhabit,
         prize_idea: inputprize,
@@ -92,8 +99,11 @@ function setHabitprize() {
       });
     });
   });
+
+  alert(gameCode)
+
+}
   // window.location.href = 'forms-invited.html';
-};
 
 var useremoji1 = ""
 
@@ -135,26 +145,7 @@ function setHabitprize1() {
   // window.location.href = 'forms-invited.html';
 };
 
-function  setUpAdmin(userid)
-{
-  if (window.location.href.indexOf("forms-invited") > -1) {gameCode = urladi.split("=").pop();}
-  console.log(gameCode)
 
-  db.collection('create_game').where('game_code', '==', gameCode).onSnapshot(snapshot => {
-  snapshot.docs.forEach(doc => {
-    var admin_id = doc.data().admin;
-    db.collection('users').where('user_id', '==', admin_id).onSnapshot(snapshot => {
-  snapshot.docs.forEach(doc => {
-    
-    admin_name.innerHTML = doc.data().name;
-
-         });
-      });
-   
-
-         });
-      });
-}
 
 
 

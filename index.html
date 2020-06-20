@@ -127,7 +127,18 @@
             // firebase.analytics();
             const auth = firebase.auth();
             const db = firebase.firestore();
+            const storage = firebase.storage();
         </script>
+
+        <script>
+            service firebase.storage {
+              match /b/{bucket}/o {
+                match /{allPaths=**} {
+                  allow read, write: if request.auth != null;
+                }
+              }
+            }
+          </script>
         <!-- Compiled and minified JavaScript -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <script src="scripts/auth.js"></script>

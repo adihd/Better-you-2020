@@ -1,5 +1,9 @@
+
+
 //get reference from html
 const game_code = document.querySelector('#game_code');
+
+
 
 var g_duration = 0;
 
@@ -44,7 +48,8 @@ function create_game()
       name: g_name,
       game_code: g_code,
       duration: g_duration,
-      start_date: g_start_date
+      start_date: g_start_date,
+      admin:""
   }).then(function() {
       console.log("Document successfully written!");
   })
@@ -56,6 +61,19 @@ function create_game()
 
 
 }
+
+// function setAdmin(userid)
+// {
+//   db.collection("create_game").where("game_code","==",g_code).doc(g_name).set({
+//      admin: userid
+//   }).then(function() {
+//       console.log("Document successfully written!");
+//   })
+//   .catch(function(error) {
+//       console.error("Error writing document: ", error);
+//   });
+
+// }
 
 
 //copy to clipboard func
