@@ -1,172 +1,183 @@
 <html lang="en" class="js-focus-visible">
 <script type="text/javascript">
-	window["_gaUserPrefs"] = { ioo : function() { return true; } }
+    window["_gaUserPrefs"] = {
+        ioo: function () {
+            return true;
+        }
+    }
 </script>
 
 <head>
-	<meta charset="utf-8">
-	<title>Better You</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta content="A premium admin dashboard template by themesbrand" name="description">
-	<meta content="Themesbrand" name="author">
+    <meta charset="utf-8">
+    <title>Better You</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="A premium admin dashboard template by themesbrand" name="description">
+    <meta content="Themesbrand" name="author">
 
-	<!-- App favicon -->
-	<link rel="shortcut icon" href="assets/images/favicon.ico">
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
 
-	<!--Morris Chart CSS -->
-	<link rel="stylesheet" href="assets/plugins/morris/morris.css">
-	<link href="assets/plugins/metro/MetroJs.min.css" rel="stylesheet">
+    <!--Morris Chart CSS -->
+    <link rel="stylesheet" href="assets/plugins/morris/morris.css">
+    <link href="assets/plugins/metro/MetroJs.min.css" rel="stylesheet">
 
-	<!-- App css -->
-	<link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-	<link href="assets/css/icons.css" rel="stylesheet" type="text/css">
-	<link href="assets/css/metismenu.min.css" rel="stylesheet" type="text/css">
-	<link href="assets/css/style.css" rel="stylesheet" type="text/css">
-	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- App css -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/icons.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/metismenu.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 
-	<style type="text/css">
-		@font-face {
-			font-weight: 400;
-			font-style: normal;
-			font-family: 'Inter-Loom';
+    <style type="text/css">
+        @font-face {
+            font-weight: 400;
+            font-style: normal;
+            font-family: 'Inter-Loom';
 
-			src: url('https://cdn.loom.com/assets/fonts/inter/Inter-UI-Regular.woff2') format('woff2');
-		}
+            src: url('https://cdn.loom.com/assets/fonts/inter/Inter-UI-Regular.woff2') format('woff2');
+        }
 
-		@font-face {
-			font-weight: 400;
-			font-style: italic;
-			font-family: 'Inter-Loom';
+        @font-face {
+            font-weight: 400;
+            font-style: italic;
+            font-family: 'Inter-Loom';
 
-			src: url('https://cdn.loom.com/assets/fonts/inter/Inter-UI-Italic.woff2') format('woff2');
-		}
+            src: url('https://cdn.loom.com/assets/fonts/inter/Inter-UI-Italic.woff2') format('woff2');
+        }
 
-		@font-face {
-			font-weight: 500;
-			font-style: normal;
-			font-family: 'Inter-Loom';
+        @font-face {
+            font-weight: 500;
+            font-style: normal;
+            font-family: 'Inter-Loom';
 
-			src: url('https://cdn.loom.com/assets/fonts/inter/Inter-UI-Medium.woff2') format('woff2');
-		}
+            src: url('https://cdn.loom.com/assets/fonts/inter/Inter-UI-Medium.woff2') format('woff2');
+        }
 
-		@font-face {
-			font-weight: 500;
-			font-style: italic;
-			font-family: 'Inter-Loom';
+        @font-face {
+            font-weight: 500;
+            font-style: italic;
+            font-family: 'Inter-Loom';
 
-			src: url('https://cdn.loom.com/assets/fonts/inter/Inter-UI-MediumItalic.woff2') format('woff2');
-		}
+            src: url('https://cdn.loom.com/assets/fonts/inter/Inter-UI-MediumItalic.woff2') format('woff2');
+        }
 
-		@font-face {
-			font-weight: 700;
-			font-style: normal;
-			font-family: 'Inter-Loom';
+        @font-face {
+            font-weight: 700;
+            font-style: normal;
+            font-family: 'Inter-Loom';
 
-			src: url('https://cdn.loom.com/assets/fonts/inter/Inter-UI-Bold.woff2') format('woff2');
-		}
+            src: url('https://cdn.loom.com/assets/fonts/inter/Inter-UI-Bold.woff2') format('woff2');
+        }
 
-		@font-face {
-			font-weight: 700;
-			font-style: italic;
-			font-family: 'Inter-Loom';
+        @font-face {
+            font-weight: 700;
+            font-style: italic;
+            font-family: 'Inter-Loom';
 
-			src: url('https://cdn.loom.com/assets/fonts/inter/Inter-UI-BoldItalic.woff2') format('woff2');
-		}
+            src: url('https://cdn.loom.com/assets/fonts/inter/Inter-UI-BoldItalic.woff2') format('woff2');
+        }
 
-		@font-face {
-			font-weight: 900;
-			font-style: normal;
-			font-family: 'Inter-Loom';
+        @font-face {
+            font-weight: 900;
+            font-style: normal;
+            font-family: 'Inter-Loom';
 
-			src: url('https://cdn.loom.com/assets/fonts/inter/Inter-UI-Black.woff2') format('woff2');
-		}
+            src: url('https://cdn.loom.com/assets/fonts/inter/Inter-UI-Black.woff2') format('woff2');
+        }
 
-		@font-face {
-			font-weight: 900;
-			font-style: italic;
-			font-family: 'Inter-Loom';
+        @font-face {
+            font-weight: 900;
+            font-style: italic;
+            font-family: 'Inter-Loom';
 
-			src: url('https://cdn.loom.com/assets/fonts/inter/Inter-UI-BlackItalic.woff2') format('woff2');
-		}
-	</style>
+            src: url('https://cdn.loom.com/assets/fonts/inter/Inter-UI-BlackItalic.woff2') format('woff2');
+        }
+    </style>
 </head>
 
 <body>
-	<div class="page-wrapper">
-		<!-- Page Content-->
-		<div class="page-content">
-			<div class="container-fluid">
-				<div class="row d-flex justify-content-center" style="
+    <div class="page-wrapper">
+        <!-- Page Content-->
+        <br>
+        <div class="page-content">
+
+            <div class="container-fluid">
+                <div class="row d-flex justify-content-center" style="
     height: 560px;
 ">
-					<div class="card">
-						<div class="card-body">
-							<h5 class="mt-0">Create a challenge!</h5>
-							<p class="text-muted font-13 mb-4">Set ground rules to the contest and invite friends</p>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="mt-0">Create a challenge!</h5>
+                            <p class="text-muted font-13 mb-4">Set ground rules to the contest and invite friends</p>
 
-							<div>
+                            <div>
 
-								<div class="form-group">
+                                <div class="form-group">
 
 
-									<div class="input-field">
-										<!-- signup-name -->
+                                    <div class="input-field">
+                                        <!-- signup-name -->
 
-										<label for="username ">Challenge Name</label>
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text" id="basic-addon1"><i class="far fa-user"></i></span>
+                                        <label for="username ">Challenge Name</label>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="basic-addon1"><i
+                                                        class="far fa-user"></i></span>
+                                            </div>
+                                            <input type="text" class="form-control" id="group-name"
+                                                placeholder="Enter Challenge Name" required="">
+                                        </div>
                                     </div>
-                                    <input type="text" class="form-control" id="group-name" placeholder="Enter Challenge Name" required="">
-                                </div>
-                            </div>
-                         <div class="form-group">
-                            <label for="example-datetime-local-input">Start Date</label>
-                            <input class="form-control" type="date" value="" id="example-datetime-local-input">
-                          </div>
+                                    <div class="form-group">
+                                        <label for="example-datetime-local-input">Start Date</label>
+                                        <input class="form-control" type="date" value=""
+                                            id="example-datetime-local-input">
+                                    </div>
 
                                     <br>
-                    <h5 class="mt-0">Choose the challange duration</h5>
-                    <p class="text-muted font-13 mb-4">Choose the number of weeks for the challenge. During this time you should do the habbit once a day.</p>
-                            <div class="col-sm-4">
-                                <div class="dropdown mo-mb-2">
-                                    <div>
-                                        <select id="duration_select" onchange="save_duration()" class="custom-select">
-                                            <option selected="">Number of weeks</option>
-                                            <option value="1">2</option>
-                                            <option value="2">4</option>
-                                            <option value="3">8</option>
-                                        </select>
+                                    <h5 class="mt-0">Choose the challange duration</h5>
+                                    <p class="text-muted font-13 mb-4">Choose the number of weeks for the challenge.
+                                        During this time you should do the habbit once a day.</p>
+                                    <div class="col-sm-4">
+                                        <div class="dropdown mo-mb-2">
+                                            <div>
+                                                <select id="duration_select" onchange="save_duration()"
+                                                    class="custom-select">
+                                                    <option selected="">Number of weeks</option>
+                                                    <option value="1">2</option>
+                                                    <option value="2">4</option>
+                                                    <option value="3">8</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <br>
                                     </div>
-                                </div>
-                                <br>
-                                </div>
-                                 <h5 class="mt-0">Game pin</h5>
+                                    <h5 class="mt-0">Game pin</h5>
                                     <p class="text-muted mb-4 font-13"></p>
                                     <div class="input-group">
                                         <input id="game_code" type="text" class="form-control" value="">
                                         <div class="input-group-append">
-                                            <button type="button" class="btn btn-primary btn-clipboard copyboard" data-clipboard-action="copy" data-clipboard-target="#clipboardInput"><i class="far fa-copy mr-2"></i>Copy</button>
+                                            <button type="button" class="btn btn-primary btn-clipboard copyboard"
+                                                data-clipboard-action="copy" data-clipboard-target="#clipboardInput"><i
+                                                    class="far fa-copy mr-2"></i>Copy</button>
                                         </div>
                                     </div>
-                                <br>
-                                <button id="setadmin"onclick="setAdmin(); create_game(); " class="btn btn-primary btn-lg sumbit-btn next-btn" type="submit">Next</button>
+                                    <br>
+                                    <button id="setadmin" onclick="setAdmin(); create_game(); "
+                                        class="btn btn-primary btn-lg btn-block sumbit-btn" type="submit">Next</button>
+                                </div>
                             </div>
+
+                            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
                         </div>
-
-                        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
                     </div>
+
                 </div>
 
-                    </div>
-              
-            <br>
-            <br>
 
-                <footer class="footer text-center text-sm-left tempdiv">
-                    © 2020 Better You <span class="text-muted d-none d-sm-inline-block float-right">Crafted with <i class="mdi mdi-heart text-danger"></i> </span>
-                </footer>
+
+
             </div>
             <!-- end page content -->
         </div>
@@ -227,7 +238,6 @@
         <script src="scripts/login.js"></script>
         <script src="scripts/create_challange.js"></script>
         <script src="scripts/set_admin.js"></script>
-        
 
 
 
@@ -240,4 +250,12 @@
 
 
 
-</div></body><loom-container id="lo-engage-ext-container"><div></div><loom-shadow classname="resolved"></loom-shadow></loom-container></html>
+
+    </div>
+</body>
+<loom-container id="lo-engage-ext-container">
+    <div></div>
+    <loom-shadow classname="resolved"></loom-shadow>
+</loom-container>
+
+</html>
