@@ -1,5 +1,7 @@
-# Better-you-2020
 
+
+# Better-you-2020
+# for mobile version go to Mobile branch!
 a web app for building a new habits with your friends
 
 
